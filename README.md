@@ -22,16 +22,14 @@ L’infrastructure suit les **bonnes pratiques du cloud** :
 # 2. Structure du projet
 
 ```
-userapi-infra/
-└── terraform/
-    ├── versions.tf
-    ├── variables.tf
-    ├── main.tf
-    └── modules/
-        └── networking/
-            ├── main.tf
-            ├── variables.tf
-            └── outputs.tf
+├── README.md
+├── .gitignore
+├── terraform/
+│   ├── main.tf                   # Entrée, orchestration des modules
+│   ├── variables.tf              # Variables globales typées et validées
+│   ├── outputs.tf
+│   └── modules/
+│       ├── networking/          # VPC, subnets, NAT, ALB, Security Groups
 ```
 
 ### Pourquoi cette structure ?
@@ -597,19 +595,6 @@ Internet
 └───────────────────────────────────────────────┘
 ```
 
-# 21. Structure du repository actuellement mise en place
-
-```
-├── README.md
-├── .gitignore
-├── terraform/
-│   ├── main.tf                   # Entrée, orchestration des modules
-│   ├── variables.tf              # Variables globales typées et validées
-│   ├── outputs.tf
-│   └── modules/
-│       ├── networking/           # VPC, subnets, NAT, ALB, Security Groups
-
-```
 ## Déploiement
 
 ### Pré-requis
